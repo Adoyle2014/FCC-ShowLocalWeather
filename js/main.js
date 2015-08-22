@@ -18,18 +18,22 @@ $(document).ready(function() {
 
             function apiCall(lat, long) {
                 $.ajax({
-                    url: "api.openweathermap.org/data/2.5/weather?",
+                    url: "http://api.openweathermap.org/data/2.5/weather?",
 
                     data: {
+                        lon: long,
                         lat: lat,
-                        long: long,
                         APPID: apiKey
                     },
                     success: function (response) {
-                        console.log(response);
+                        parseWeather(response);
                     }
                 });
-            };
+            }
+
+            function parseWeather(response) {
+                console.log(response);
+            }
         }
 
         function getUserLocation() {
