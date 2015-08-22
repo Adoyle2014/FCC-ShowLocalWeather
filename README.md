@@ -9,4 +9,6 @@
 3. **Bonus** - Display different background images based on weather
 4. **Bonus** - User can push a button to switch between fahrenheit and celsius
 
+----
+
 ## Features
