@@ -24,15 +24,44 @@
 </head>
 
 <body>
+<img class="responsive"  id="background" src="img/backgrounds/sunny.jpg">
+<div id="display-choice">
+    <p class="icon" data-icon="*"></p>
+    <p class="icon" data-icon="+"></p>
+</div>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <H1>Your Local Weather</H1>
+        <div id="local-title">
+             <div class="col-md-4">
+                <h1>The Weather In</h1>
+                <h3>Osaka, Japan</h3>
+            </div>
+        </div>
+        <div class="col-md-8 pull-right">
+            <div class="col-md-4" id="local-well">
+                <a id="local"><h4>Your local Weather</h4></a>
+            </div>
+            <div class="col-md-7 pull-right" id="other-well">
+                <div class="form-group" id="other-div">
+                    <div class="col-sm-6">
+                        <label for="cityinput">City</label>
+                        <input type="text" class="form-control" id="cityinput" placeholder="City">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="stateinput">State</label>
+                        <input type="text"  class="form-control" id="stateinput" placeholder="State">
+                    </div>
+                    <div class="col-xs-2">
+                        <button type="button" class="btn btn-default">Go</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="well" id="well">
+            <div >
 
             </div>
         </div>
