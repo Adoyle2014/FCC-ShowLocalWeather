@@ -5,7 +5,7 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background: url(../img/backgrounds/mist-large.jpg) no-repeat center center fixed;
+    background: url(http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/mist-large.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
