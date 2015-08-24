@@ -10,8 +10,12 @@
     font-style: normal;
 }
 
-.test {
-    border: 1px dashed red;
+.row-bottom-margin-50 {
+    margin-bottom: 50px;
+}
+
+.well {
+    background-color: rgba(245, 245, 245, 0.4);
 }
 
 .navbar-brand {
@@ -26,6 +30,10 @@ span.icon-bar {
     background-color: #e7e7e7;
 }
 
+.settings {
+    margin: 10px auto 0 auto;
+}
+
 #locale {
     margin-top: 75px;
     text-align:center;
@@ -34,31 +42,21 @@ span.icon-bar {
     text-shadow: 0 0 1px #222222;
 }
 
-.icon:before {
-    font-family: 'MeteoconsRegular';
-    content: attr(data-icon);
+#fehren {
+    background-image: url("../img/icons/Fehrenhiet-icon.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
 
-    text-shadow: 0 0 2px yellow;
-
-}
-
-#therm {
-    color: #222222;
-    font-size: 2em;
-}
-
-.temp-display {
 
 }
 
-.icon:hover {
+#celsius {
+    background-image: url("../img/icons/Celsius-icon.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
 
-}
-
-#display-choice {
-    position: absolute;
-    top: 10px;
-    left: 100px;
 }
 
 

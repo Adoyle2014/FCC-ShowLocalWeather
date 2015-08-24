@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     //API key for openweathermap.com  4c45bb0e6071b74cf43da0d4aa498377
 
-    //showLocalWeather();
+    showLocalWeather();
 
     function showLocalWeather() {
         var currLat = 0;
