@@ -10,15 +10,49 @@
     font-style: normal;
 }
 
+.test {
+    border: 1px dashed red;
+}
+
+.navbar-brand {
+    font-size: 2em;
+}
+
+.navbar-toggle {
+    background-color: #222222;
+}
+
+span.icon-bar {
+    background-color: #e7e7e7;
+}
+
+#locale {
+    margin-top: 75px;
+    text-align:center;
+    font-size: 2em;
+    color: #d43f3a;
+    text-shadow: 0 0 1px #222222;
+}
+
 .icon:before {
     font-family: 'MeteoconsRegular';
     content: attr(data-icon);
-    font-size: 4em;
+
     text-shadow: 0 0 2px yellow;
+
+}
+
+#therm {
+    color: #222222;
+    font-size: 2em;
+}
+
+.temp-display {
+
 }
 
 .icon:hover {
-    color: #d43f3a;
+
 }
 
 #display-choice {
@@ -27,17 +61,7 @@
     left: 100px;
 }
 
-h1 {
-    color: #222222;
-    font-size: 2.5em;
-    text-shadow: 0 0 3px #ccc;
-}
 
-h3 {
-    color: #d43f3a;
-    font-size: 2.3em;
-    text-shadow: 0 0 3px #494949;
-}
 #background {
     position: absolute;
     width: 100%;
@@ -45,54 +69,5 @@ h3 {
     z-index: -999;
 }
 
-#local-title {
-    text-align: center;
-}
-#local h4 {
-    font-size: 1.2em;
-    color: #d43f3a;
-}
 
-#local-well a {
-    text-decoration: none;
-}
-
-#local-well:hover {
-    background: #d7d7d7;
-}
-
-#local-well {
-    background-color: #e7e7e7;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-right: 1px;
-    margin-top: 30px;
-    border-radius: 5px;
-    border: 1px solid #222;
-    text-align: center;
-
-}
-
-#other-well {
-    background-color: #e7e7e7;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-left: 1px;
-    margin-top: 15px;
-    border-radius: 5px;
-    border: 1px solid #222;
-
-}
-
-#other-well:hover {
-    background: #d7d7d7;
-}
-
-label {
-    margin: 0 auto;
-}
-
-#other-div button {
-    margin-top: 20px;
-}
 
