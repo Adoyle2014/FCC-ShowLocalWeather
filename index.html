@@ -24,11 +24,6 @@
 </head>
 
 <body>
-<img class="responsive"  id="background" src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/sunny.jpg">
-
-
-
-
 
     <nav class="navbar navbar-fixed-top">
         <div class="container">
@@ -44,10 +39,10 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
-                        <input type="text" placeholder="City" class="form-control">
+                        <input type="text" placeholder="City" class="form-control transparent-input">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="State or Country" class="form-control">
+                        <input type="text" placeholder="State or Country" class="form-control transparent-input">
                     </div>
                     <button type="submit" class="btn btn-success">Go</button>
                     <div class="hidden-xs settings">
@@ -65,11 +60,10 @@
     <div class="container">
         <div class="row row-bottom-margin-50" id="locale">
             <div class="col-md-12">
-                <h1>Rochester</h1>
-                <h1>New Hampshire</h1>
+                <h1>Rochester, New Hampshire</h1>
             </div>
         </div>
-        <div class="row well">
+        <div class="row well well-sm">
             <div class="col-md-12">
                 <div class="col-md-4">
                     <div class="row">
@@ -77,17 +71,17 @@
                             <h2>Current Temp</h2>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row row-bottom-margin-50">
                         <div class="col-md-12 text-center">
                             <h1>72 &#8457;</h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 text-center">
+                        <div class="col-md-6 col-xs-6 text-center">
                             <h3>Min</h3>
                             <h2>56 &#8457;</h2>
                         </div>
-                        <div class="col-md-6 text-center">
+                        <div class="col-md-6 col-xs-6 text-center">
                             <h3>Max</h3>
                             <h2>78 &#8457;</h2>
                         </div>
@@ -95,10 +89,43 @@
 
                 </div>
                 <div class="col-md-4">
-
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2>Conditions</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="img/icons/lite-rain.png">
+                        </div>
+                    </div>
+                    <div class="row hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h3>Mist/Lite Rain</h3>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-
+                    <div class="row row-bottom-margin-70">
+                        <div class="col-md-6 col-xs-6 text-center">
+                            <h3>Pressure</h3>
+                            <h2>1015mb</h2>
+                        </div>
+                        <div class="col-md-6 col-xs-6 text-center">
+                            <h3>Humidity</h3>
+                            <h2>88%</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-6 text-center">
+                            <h3>Rise</h3>
+                            <h2>6:03</h2>
+                        </div>
+                        <div class="col-md-6 col-xs-6 text-center">
+                            <h3>Set</h3>
+                            <h2>8:26</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

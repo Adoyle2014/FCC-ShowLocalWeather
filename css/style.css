@@ -14,8 +14,12 @@
     margin-bottom: 50px;
 }
 
+.row-bottom-margin-70 {
+    margin-bottom: 70px;
+}
+
 .well {
-    background-color: rgba(245, 245, 245, 0.4);
+    background-color: rgba(80, 180, 212, 0.6);
 }
 
 .navbar-brand {
@@ -30,6 +34,10 @@ span.icon-bar {
     background-color: #e7e7e7;
 }
 
+.transparent-input {
+    background-color: rgba(245, 245, 245, 0.4);
+}
+
 .settings {
     margin: 10px auto 0 auto;
 }
@@ -38,7 +46,7 @@ span.icon-bar {
     margin-top: 75px;
     text-align:center;
     font-size: 2em;
-    color: #d43f3a;
+    color: #3368b7;
     text-shadow: 0 0 1px #222222;
 }
 
@@ -60,11 +68,14 @@ span.icon-bar {
 }
 
 
-#background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+body {
+    background: url(../img/backgrounds/mist-large.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     z-index: -999;
+
 }
 
 
