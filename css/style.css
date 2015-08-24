@@ -1,13 +1,41 @@
-/*====== Icon set for weather ========*/
-@font-face {
-    font-family: 'MeteoconsRegular';
-    src: url(../fonts/meteocons-webfont.eot);
-    src: url(../fonts/meteocons-webfont.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/meteocons-webfont.woff) format('woff'),
-    url(../fonts/meteocons-webfont.ttf) format('truetype'),
-    url(../fonts/meteocons-webfont.svg#MeteoconsRegular) format('svg');
-    font-weight: normal;
-    font-style: normal;
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: url(../img/backgrounds/mist-large.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -999;
+    font-family: 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Krona One', sans-serif;
+}
+
+small {
+    color: #000 !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: rgba(80, 180, 212, 0.6);
+    padding-top: 10px;
+}
+
+footer img {
+    height: 40px;
+    cursor: pointer;
+
 }
 
 .row-bottom-margin-50 {
@@ -34,8 +62,8 @@ span.icon-bar {
     background-color: #e7e7e7;
 }
 
-.transparent-input {
-    background-color: rgba(245, 245, 245, 0.4);
+#buttons {
+    margin-top: 20px;
 }
 
 .settings {
@@ -43,11 +71,11 @@ span.icon-bar {
 }
 
 #locale {
-    margin-top: 75px;
+
     text-align:center;
     font-size: 2em;
-    color: #3368b7;
-    text-shadow: 0 0 1px #222222;
+    color: #000;
+    text-shadow: 0 0 4px #50b4d4;
 }
 
 #fehren {
@@ -68,15 +96,6 @@ span.icon-bar {
 }
 
 
-body {
-    background: url(../img/backgrounds/mist-large.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    z-index: -999;
-
-}
 
 
 

@@ -17,15 +17,14 @@
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <!-- Fonts from Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Rubik:400,700|Krona+One' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-fixed-top">
+    <nav class="navbar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -59,12 +58,19 @@
     </nav>
     <div class="container">
         <div class="row row-bottom-margin-50" id="locale">
-            <div class="col-md-12">
-                <h1>Rochester, New Hampshire</h1>
+            <div class="col-md-6">
+                <h2 class="well">Rochester, New Hampshire</h2>
+            </div>
+            <div class="col-md-3 col-md-offset-3" id="buttons">
+                <a href="index.html"><div class="active btn btn-primary">Current Conditions</div></a>
+                <a href="forecast.html"><div class="btn btn-primary">Your 3-Day Forecast</div></a>
             </div>
         </div>
         <div class="row well well-sm">
             <div class="col-md-12">
+                <div class="row text-center">
+                    <h3 id="todays-date"><strong>Monday August 21<sup>st</sup>, 2015</strong></h3>
+                </div>
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -86,8 +92,8 @@
                             <h2>78 &#8457;</h2>
                         </div>
                     </div>
-
                 </div>
+                <hr class="visible-xs-block visible-sm-block">
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -105,6 +111,7 @@
                         </div>
                     </div>
                 </div>
+                <hr class="visible-xs-block visible-sm-block">
                 <div class="col-md-4">
                     <div class="row row-bottom-margin-70">
                         <div class="col-md-6 col-xs-6 text-center">
@@ -119,11 +126,11 @@
                     <div class="row">
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Rise</h3>
-                            <h2>6:03</h2>
+                            <h2>6:03 <small>am</small></h2>
                         </div>
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Set</h3>
-                            <h2>8:26</h2>
+                            <h2>8:26 <small>pm</small></h2>
                         </div>
                     </div>
                 </div>
@@ -131,6 +138,23 @@
         </div>
 
     </div><!-- /.container -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pull-left">
+                        <p>Created by <a href="http://www.doyleware.com/" target="_blank"><img  src="img/doyleware-logo.png"></a></p>
+                </div>
+                <div class="col-md-4 pull-right text-right">
+                        <a href="https://github.com/Adoyle2014" target="_blank"><img src="img/icons/github_alt.png"></a>
+
+                        <a href="https://twitter.com/DoylewareDesign" target="_blank"><img src="img/icons/twitter_alt.png"></a>
+
+                        <a href="http://www.freecodecamp.com/adoyle2014" target="_blank"><img src="img/icons/fcc.jpg"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Your Local Weather</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Fonts from Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Rubik:400,700|Krona+One' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <p class="navbar-brand">Your Local Weather</p>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" placeholder="City" class="form-control transparent-input">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="State or Country" class="form-control transparent-input">
+                </div>
+                <button type="submit" class="btn btn-success">Go</button>
+                <div class="hidden-xs settings">
+                    <button class="btn btn-lg btn-primary active" id="fehren"></button>
+                    <button class="btn btn-lg btn-primary" id="celsius"></button>
+                </div>
+                <div class="pull-right visible-xs-inline settings">
+                    <button class="btn btn-lg btn-primary active" id="fehren"></button>
+                    <button class="btn btn-lg btn-primary" id="celsius"></button>
+                </div>
+            </form>
+        </div><!--/.navbar-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <div class="row row-bottom-margin-50" id="locale">
+        <div class="col-md-6">
+            <h2 class="well">Rochester, New Hampshire</h2>
+        </div>
+        <div class="col-md-3 col-md-offset-3" id="buttons">
+            <a href="index.html"><div class="btn btn-primary">Current Conditions</div></a>
+            <a href="forecast.html"><div class="active btn btn-primary">Your 3-Day Forecast</div></a>
+        </div>
+    </div>
+    <div class="row well well-sm">
+        <div class="col-md-4">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h4 id="tomorrows--date"><strong>August 24<sup>th</sup>, 2015</strong></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Tomorrow</h2>
+                    <h3>Lite Rain</h3>
+                </div>
+            </div>
+            <div class="row row-bottom-margin-50">
+                <div class="col-md-12 text-center">
+                    <img src="img/icons/lite-rain.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-6 text-center">
+                    <h3>Min</h3>
+                    <h2>56 &#8457;</h2>
+                </div>
+                <div class="col-md-6 col-xs-6 text-center">
+                    <h3>Max</h3>
+                    <h2>78 &#8457;</h2>
+                </div>
+            </div>
+        </div>
+        <hr class="visible-xs-block visible-sm-block">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4 id="tomorrows--date"><strong>August 23<sup>rd</sup>, 2015</strong></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Wednesday</h2>
+                    <h3>Lite Rain</h3>
+                </div>
+            </div>
+            <div class="row row-bottom-margin-50">
+                <div class="col-md-12 text-center">
+                    <img src="img/icons/lite-rain.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-6 text-center">
+                    <h3>Min</h3>
+                    <h2>56 &#8457;</h2>
+                </div>
+                <div class="col-md-6 col-xs-6 text-center">
+                    <h3>Max</h3>
+                    <h2>78 &#8457;</h2>
+                </div>
+            </div>
+        </div>
+        <hr class="visible-xs-block visible-sm-block">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h4 id="tomorrows--date"><strong>August 24<sup>th</sup>, 2015</strong></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2>Thursday</h2>
+                        <h3>Lite Rain</h3>
+                    </div>
+                </div>
+                <div class="row row-bottom-margin-50">
+                    <div class="col-md-12 text-center">
+                        <img src="img/icons/lite-rain.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 text-center">
+                        <h3>Min</h3>
+                        <h2>56 &#8457;</h2>
+                    </div>
+                    <div class="col-md-6 col-xs-6 text-center">
+                        <h3>Max</h3>
+                        <h2>78 &#8457;</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.container -->
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 pull-left">
+                <p>Created by <a href="http://www.doyleware.com/" target="_blank"><img  src="img/doyleware-logo.png"></a></p>
+            </div>
+            <div class="col-md-4 pull-right text-right">
+                <a href="https://github.com/Adoyle2014" target="_blank"><img src="img/icons/github_alt.png"></a>
+
+                <a href="https://twitter.com/DoylewareDesign" target="_blank"><img src="img/icons/twitter_alt.png"></a>
+
+                <a href="http://www.freecodecamp.com/adoyle2014" target="_blank"><img src="img/icons/fcc.jpg"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
