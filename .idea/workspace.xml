@@ -28,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="forecast.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="forecast.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forecast.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6646972" vertical-offset="3036" max-vertical-offset="4032">
-              <caret line="166" column="164" selection-start-line="166" selection-start-column="164" selection-end-line="166" selection-end-column="164" />
+            <state vertical-scroll-proportion="-5.2" vertical-offset="1587" max-vertical-offset="4032">
+              <caret line="83" column="111" selection-start-line="83" selection-start-column="111" selection-end-line="83" selection-end-column="111" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.2" vertical-offset="2772" max-vertical-offset="3654">
-              <caret line="148" column="172" selection-start-line="148" selection-start-column="172" selection-end-line="148" selection-end-column="172" />
+            <state vertical-scroll-proportion="0.71344167" vertical-offset="1701" max-vertical-offset="3654">
+              <caret line="104" column="119" selection-start-line="104" selection-start-column="119" selection-end-line="104" selection-end-column="119" />
               <folding />
             </state>
           </provider>
@@ -79,8 +79,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/forecast.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -264,7 +264,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440457927897</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed all links">
+      <created>1440458326052</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1440458326052</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -319,7 +325,8 @@
     <MESSAGE value="links, fonts, forecast page complete" />
     <MESSAGE value="links, fonts, forecast page complete again" />
     <MESSAGE value="fixed background link" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed background link" />
+    <MESSAGE value="fixed all links" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed all links" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -353,18 +360,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/forecast.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.2" vertical-offset="2772" max-vertical-offset="3654">
-          <caret line="148" column="172" selection-start-line="148" selection-start-column="172" selection-end-line="148" selection-end-column="172" />
+        <state vertical-scroll-proportion="-5.2" vertical-offset="1587" max-vertical-offset="4032">
+          <caret line="83" column="111" selection-start-line="83" selection-start-column="111" selection-end-line="83" selection-end-column="111" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forecast.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6646972" vertical-offset="3036" max-vertical-offset="4032">
-          <caret line="166" column="164" selection-start-line="166" selection-start-column="164" selection-end-line="166" selection-end-column="164" />
+        <state vertical-scroll-proportion="0.71344167" vertical-offset="1701" max-vertical-offset="3654">
+          <caret line="104" column="119" selection-start-line="104" selection-start-column="119" selection-end-line="104" selection-end-column="119" />
           <folding />
         </state>
       </provider>
