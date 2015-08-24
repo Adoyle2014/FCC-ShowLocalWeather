@@ -43,7 +43,7 @@ span.icon-bar {
 }
 
 #fehren {
-    background-image: url("../img/icons/Fehrenhiet-icon.png");
+    background-image: url("http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/Fehrenhiet-icon.png");
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@ span.icon-bar {
 }
 
 #celsius {
-    background-image: url("../img/icons/Celsius-icon.png");
+    background-image: url("http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/Celsius-icon.png");
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
