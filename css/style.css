@@ -18,6 +18,18 @@ h1, h2, h3, h4, h5 {
     font-family: 'Krona One', sans-serif;
 }
 
+.nav-container {
+    width: 75%;
+}
+
+.main-container {
+    width: 70%;
+}
+
+.footer-container {
+    width: 70%;
+}
+
 small {
     color: #000 !important;
 }
@@ -42,8 +54,12 @@ footer img {
     margin-bottom: 50px;
 }
 
-.row-bottom-margin-70 {
-    margin-bottom: 70px;
+.row-bottom-margin-75 {
+    margin-bottom: 75px;
+}
+
+.row-bottom-margin-20 {
+    margin-bottom: 20px;
 }
 
 .well {

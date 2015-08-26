@@ -25,7 +25,7 @@
 <body>
 
     <nav class="navbar">
-        <div class="container">
+        <div class="container" >
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -53,7 +53,7 @@
             </div><!--/.navbar-collapse -->
         </div>
     </nav>
-    <div class="container">
+    <div class="container main-container">
         <div class="row row-bottom-margin-50" id="locale">
             <div class="col-md-6">
                 <h2 class="well" id="location"></h2>
@@ -80,13 +80,18 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h3>Wind</h3>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-xs-6 text-center">
-                            <h3>Min</h3>
-                            <h2 id="tempMin"></h2>
+                            <h3>Speed</h3>
+                            <h2 id="windSpeed"></h2>
                         </div>
                         <div class="col-md-6 col-xs-6 text-center">
-                            <h3>Max</h3>
-                            <h2 id="tempMax"></h2>
+                            <h3>Direction</h3>
+                            <h2 id="windDir"></h2>
                         </div>
                     </div>
                 </div>
@@ -99,18 +104,18 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <img src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/lite-rain.png">
+                            <img src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/lite-rain_1.png">
                         </div>
                     </div>
                     <div class="row hidden-xs">
                         <div class="col-md-12 text-center">
-                            <h3>Mist/Lite Rain</h3>
+                            <h3 id="conditions"></h3>
                         </div>
                     </div>
                 </div>
                 <hr class="visible-xs-block visible-sm-block">
                 <div class="col-md-4">
-                    <div class="row row-bottom-margin-70">
+                    <div class="row row-bottom-margin-75">
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Pressure</h3>
                             <h2 id="pressure"></h2>
@@ -118,6 +123,11 @@
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Humidity</h3>
                             <h2 id="humidity"></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h3>Sun</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -137,7 +147,7 @@
             <div class="col-md-4">
                 <div class="row text-center">
                     <div class="col-md-12">
-                        <h4 class="forecastDate" id="tomorrow"></h4>
+                        <h4 class="forecastDate row-bottom-margin-20" id="tomorrow"></h4>
                     </div>
                 </div>
                 <div class="row">
@@ -145,7 +155,7 @@
                         <h3>Lite Rain</h3>
                     </div>
                 </div>
-                <div class="row row-bottom-margin-50">
+                <div class="row row-bottom-margin-20">
                     <div class="col-md-12 text-center">
                         <img src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/lite-rain.png">
                     </div>
@@ -173,7 +183,7 @@
                         <h3>Lite Rain</h3>
                     </div>
                 </div>
-                <div class="row row-bottom-margin-50">
+                <div class="row row-bottom-margin-20">
                     <div class="col-md-12 text-center">
                         <img src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/lite-rain.png">
                     </div>
@@ -201,7 +211,7 @@
                         <h3>Lite Rain</h3>
                     </div>
                 </div>
-                <div class="row row-bottom-margin-50">
+                <div class="row row-bottom-margin-20">
                     <div class="col-md-12 text-center">
                         <img src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/lite-rain.png">
                     </div>
@@ -223,7 +233,7 @@
     </div><!-- /.container -->
 
     <footer class="footer">
-        <div class="container">
+        <div class="container footer-container">
             <div class="row">
                 <div class="col-md-4 pull-left">
                         <p>Created by <a href="http://www.doyleware.com/" target="_blank"><img  src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/doyleware-logo.png"></a></p>

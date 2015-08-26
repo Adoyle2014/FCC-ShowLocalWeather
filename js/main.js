@@ -112,9 +112,8 @@ $(document).ready(function() {
         var date = new Date(timestamp*1000);
         var hours = date.getHours();
         var minutes = "0" + date.getMinutes();
-        var seconds = "0" + date.getSeconds();
 
-        return (hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2));
+        return (hours + ':' + minutes.substr(-2));
     }
 
 
@@ -141,21 +140,24 @@ $(document).ready(function() {
     }
 
     function createWeatherDataStrings(data) {
+        console.log(data);
         var humidity = data.main.humidity;
         var pressure = data.main.pressure;
-        var temp = data.main.temp;
-        var temp_max = data.main.temp_max;
-        var temp_min = data.main.temp_min;
+        var temp = Math.round(data.main.temp);
+        var windDir = data.wind.deg;
+        var windSpeed = data.wind.speed;
         var sunrise = convertUTC(data.sys.sunrise);
         var sunset = convertUTC(data.sys.sunset);
+        var conditions = (data.weather[0].main);
 
         $("#currentTemp").html(temp + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
-        $("#tempMin").html(temp_min + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
-        $("#tempMax").html(temp_max + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
+        $("#windSpeed").html(windSpeed + '<small>mph</small>');
+        $("#windDir").html(windDir + '<small class="fehren-setting">deg</small>');
         $("#pressure").html(pressure + '<small>mb</small>');
         $("#humidity").html(humidity + '<small>%</small>');
         $("#rise").html(sunrise + ' <small>am</small>');
         $("#set").html(sunset + ' <small>pm</small>');
+        $("#conditions").html(conditions);
     }
 
 
