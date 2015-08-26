@@ -50,6 +50,10 @@ footer img {
     background-color: rgba(80, 180, 212, 0.6);
 }
 
+#forecast {
+    display: none;
+}
+
 .navbar-brand {
     font-size: 2em;
 }
@@ -93,6 +97,10 @@ span.icon-bar {
     background-size: contain;
     background-repeat: no-repeat;
 
+}
+
+.forecastDate {
+    font-size: 1.5em;
 }
 
 
