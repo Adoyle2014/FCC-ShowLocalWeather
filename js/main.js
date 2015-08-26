@@ -1,19 +1,19 @@
 $(document).ready(function() {
 
-    //API key for openweathermap.com  4c45bb0e6071b74cf43da0d4aa498377
-
-    var lat = 0;
-    var long = 0;
-
-    //Get data on page load
-    //getUserLocation();
+    //// Page load function ////
+    getUserLocation();
     setDates();
+    getWeatherOnLoad();
 
-    //Button watchers
+
+
+
+
+    //// Button watchers ////
     $("#locale-button").on('click', function(e) {
         e.preventDefault();
-        var city = $("#city").val();
-        getUserWeather(lat, long, city);
+        var userInput = $("#city").val();
+        getWeatherFromUser(userInput);
     });
 
     $("#btn-current").on('click', function(e) {
@@ -34,10 +34,28 @@ $(document).ready(function() {
         })
     });
 
+    $("#fehren").on('click', function(e) {
+        e.preventDefault();
+        $("#celsius").removeClass("active");
+        $("#fehren").addClass("active");
+        $(".celsius-setting").fadeOut('fast', 'swing', function() {
+            $(".fehren-setting").fadeIn('slow');
+        })
+    });
+
+    $("#celsius").on('click', function(e) {
+        e.preventDefault();
+        $("#fehren").removeClass("active");
+        $("#celsius").addClass("active");
+        $(".fehren-setting").fadeOut('fast', 'swing', function() {
+            $(".celsius-setting").fadeIn('slow');
+        })
+    });
 
 
 
-    //Helper methods
+
+    //// Helper methods ////
     function setDates() {
         Date.prototype.addDays = function(days) {
             this.setDate(this.getDate() + parseInt(days));
@@ -51,19 +69,6 @@ $(document).ready(function() {
         createDateStrings(todayPlus2, "tomorrowPlus1");
         var todayPlus3 = today.addDays(3);
         createDateStrings(todayPlus3, "tomorrowPlus2");
-    }
-
-
-    function createDateStrings(fullDate, element) {
-        var daysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        var monthsArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        var day = daysArr[fullDate.getDay()];
-        var ordinalInd = getOrd(day);
-        var month = monthsArr[fullDate.getMonth()];
-        var dayDate = fullDate.getDate();
-        var year = fullDate.getFullYear();
-        var dateStr = '<strong>' + day + " " + month + " " + dayDate + '<sup>' + ordinalInd + '</sup></strong>';
-        $('#' + element).append(dateStr);
     }
 
     function getOrd(day) {
@@ -80,87 +85,116 @@ $(document).ready(function() {
         }
     }
 
-
-
-    //Display the weather data
-    function parseWeather(response) {
-        console.log(response);
-
-
-    }
-
-    //Get the data
-    function getUserWeather(lat, long, city) {
-        console.log(city);
-        var apiKey = "4c45bb0e6071b74cf43da0d4aa498377";
-
-        apiCall(lat, long, city, apiKey);
-        console.log(city);
-        function apiCall(lat, long) {
-            if(city) {
-
-                $.ajax({
-                    url: "http://api.openweathermap.org/data/2.5/find?",
-
-                    data: {
-                        q: city,
-                        type: "accurate",
-                        APPID: apiKey
-                    },
-                    success: function (response) {
-                        parseWeather(response);
-                    }
-                });
-
-            } else {
-                $.ajax({
-                    url: "http://api.openweathermap.org/data/2.5/weather?",
-
-                    data: {
-                        lon: long,
-                        lat: lat,
-                        APPID: apiKey
-                    },
-                    success: function (response) {
-                        parseWeather(response);
-                    }
-                });
-            }
-        }
+    function getCountryNames(countryCode) {
+        $.getJSON('http://anyorigin.com/dev/get?url=http%3A//country.io/names.json&callback=?', function(data){
+            return (data.contents[countryCode]);
+        });
     }
 
     function getUserLocation() {
+        $.get("http://ipinfo.io", function(response) {
+            createLocationString(response.city, response.region, response.country);
+            if(response.country === "US") {
+                var units = "imperial";
+            } else {
+                var  units = "metric";
+            }
+            var location = response.loc;
+            var lat = location.split(',')[0];
+            var lon = location.split(',')[1];
+            getWeatherOnLoad(lon, lat, units);
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        }, "jsonp");
+
+    }
+
+    function convertUTC(timestamp) {
+        var date = new Date(timestamp*1000);
+        var hours = date.getHours();
+        var minutes = "0" + date.getMinutes();
+        var seconds = "0" + date.getSeconds();
+
+        return (hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2));
+    }
+
+
+
+
+    //// HTML content functions ////
+    function createDateStrings(fullDate, element) {
+        var daysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var monthsArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var day = daysArr[fullDate.getDay()];
+        var ordinalInd = getOrd(day);
+        var month = monthsArr[fullDate.getMonth()];
+        var dayDate = fullDate.getDate();
+        var dateStr = '<strong>' + day + " " + month + " " + dayDate + '<sup>' + ordinalInd + '</sup></strong>';
+        $('#' + element).append(dateStr);
+    }
+
+    function createLocationString(city, region, country) {
+        if(country === "US" || country === "CA") {
+            $("#location").html(city + ", " + region);
         } else {
-            alert("Geolocation is not supported. Please update your browser");
+            $("#location").html(city + ", " + getCountryNames(country));
         }
     }
 
-    function showPosition(position) {
-        currLat = position.coords.latitude;
-        currLong = position.coords.longitude;
+    function createWeatherDataStrings(data) {
+        var humidity = data.main.humidity;
+        var pressure = data.main.pressure;
+        var temp = data.main.temp;
+        var temp_max = data.main.temp_max;
+        var temp_min = data.main.temp_min;
+        var sunrise = convertUTC(data.sys.sunrise);
+        var sunset = convertUTC(data.sys.sunset);
 
-        getUserWeather(currLat, currLong);
-
+        $("#currentTemp").html(temp + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
+        $("#tempMin").html(temp_min + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
+        $("#tempMax").html(temp_max + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
+        $("#pressure").html(pressure + '<small>mb</small>');
+        $("#humidity").html(humidity + '<small>%</small>');
+        $("#rise").html(sunrise + ' <small>am</small>');
+        $("#set").html(sunset + ' <small>pm</small>');
     }
 
-    function showError(error) {
-        switch (error.code) {
-            case error.PERMISSION_DENIED:
-                alert("User denied the request for Geolocation.");
-                break;
-            case error.POSITION_UNAVAILABLE:
-                alert("Location information is unavailable.");
-                break;
-            case error.TIMEOUT:
-                alert("The request to get user location timed out.");
-                break;
-            case error.UNKNOWN_ERROR:
-                alert("An unknown error occurred.");
-                break;
-        }
+
+
+
+    //// Get weather  data ////
+    function getWeatherFromUser(searchTerm) {
+
+        var apiKey = "4c45bb0e6071b74cf43da0d4aa498377";
+        $.ajax({
+            url: "http://api.openweathermap.org/data/2.5/find?",
+
+            data: {
+                q: searchTerm,
+                type: "accurate",
+                APPID: apiKey
+            },
+            success: function (response) {
+
+            }
+        });
     }
 
+    function getWeatherOnLoad(lon, lat, units) {
+
+        var apiKey = "4c45bb0e6071b74cf43da0d4aa498377";
+        $.ajax({
+            url: "http://api.openweathermap.org/data/2.5/weather?",
+
+            data: {
+                units: units,
+                lon: lon,
+                lat: lat,
+
+                APPID: apiKey
+            },
+            success: function (response) {
+                createWeatherDataStrings(response);
+            }
+        });
+    }
 });

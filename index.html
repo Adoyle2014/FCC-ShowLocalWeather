@@ -46,7 +46,7 @@
                         <div class="btn btn-lg btn-primary" id="celsius"></div>
                     </div>
                     <div class="pull-right visible-xs-inline settings">
-                        <div class="btn btn-lg btn-primary active" id="fehren"></div>
+                        <div class="btn btn-lg btn-primary" id="fehren"></div>
                         <div class="btn btn-lg btn-primary" id="celsius"></div>
                     </div>
                 </form>
@@ -56,7 +56,7 @@
     <div class="container">
         <div class="row row-bottom-margin-50" id="locale">
             <div class="col-md-6">
-                <h2 class="well">Rochester, New Hampshire</h2>
+                <h2 class="well" id="location"></h2>
             </div>
             <div class="col-md-3 col-md-offset-3" id="buttons">
                 <div class="active btn btn-primary" id="btn-current">Current Conditions</div>
@@ -76,17 +76,17 @@
                     </div>
                     <div class="row row-bottom-margin-50">
                         <div class="col-md-12 text-center">
-                            <h1>72<small class="temp-setting">&#8457;</small></h1>
+                            <h1 id="currentTemp"></h1>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Min</h3>
-                            <h2>56<small class="temp-setting">&#8457;</small></h2>
+                            <h2 id="tempMin"></h2>
                         </div>
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Max</h3>
-                            <h2>78<small class="temp-setting">&#8457;</small></h2>
+                            <h2 id="tempMax"></h2>
                         </div>
                     </div>
                 </div>
@@ -113,21 +113,21 @@
                     <div class="row row-bottom-margin-70">
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Pressure</h3>
-                            <h2>1015<small>mb</small></h2>
+                            <h2 id="pressure"></h2>
                         </div>
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Humidity</h3>
-                            <h2>88<small>%</small></h2>
+                            <h2 id="humidity"></h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Rise</h3>
-                            <h2>6:03 <small>am</small></h2>
+                            <h2 id="rise"></h2>
                         </div>
                         <div class="col-md-6 col-xs-6 text-center">
                             <h3>Set</h3>
-                            <h2>8:26 <small>pm</small></h2>
+                            <h2 id="set"></h2>
                         </div>
                     </div>
                 </div>
@@ -153,11 +153,11 @@
                 <div class="row">
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Min</h3>
-                        <h2>56<small class="temp-setting">&#8457;</small></h2>
+                        <h2>56<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small></h2>
                     </div>
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Max</h3>
-                        <h2>78<small class="temp-setting">&#8457;</small></h2>
+                        <h2>78<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small></h2>
                     </div>
                 </div>
             </div>
@@ -181,11 +181,11 @@
                 <div class="row">
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Min</h3>
-                        <h2>56<small class="temp-setting">&#8457;</small></h2>
+                        <h2>56<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small></h2>
                     </div>
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Max</h3>
-                        <h2>78<small class="temp-setting">&#8457;</small></h2>
+                        <h2>78<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small></h2>
                     </div>
                 </div>
             </div>
@@ -209,11 +209,11 @@
                 <div class="row">
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Min</h3>
-                        <h2>56<small class="temp-setting">&#8457;</small></h2>
+                        <h2>56<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small></h2>
                     </div>
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Max</h3>
-                        <h2>78<small class="temp-setting">&#8457;</small></h2>
+                        <h2>78<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small></h2>
                     </div>
                 </div>
             </div>

@@ -54,6 +54,10 @@ footer img {
     display: none;
 }
 
+.celsius-setting {
+    display: none;
+}
+
 .navbar-brand {
     font-size: 2em;
 }
