@@ -5,13 +5,17 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background: url(http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/mist-large.jpg) no-repeat center center fixed;
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     z-index: -999;
     font-family: 'Rubik', sans-serif;
+}
+
+.navbar-brand {
+    text-shadow: 0 0 1px #ddd;
 }
 
 h1, h2, h3, h4, h5 {
