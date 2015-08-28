@@ -37,10 +37,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" placeholder="Dover, NH" class="form-control" id="city">
+                    <!--<div class="form-group">
+                        <input type="text" placeholder="Dover, NH" class="form-control disabled" id="city">
                     </div>
-                    <button class="btn btn-success" id="locale-button">Go</button>
+                    <button class="btn btn-success disabled" id="locale-button">Go</button>-->
                     <div class="hidden-xs settings text-center">
                         <div class="btn btn-lg btn-primary active" id="fehren"></div>
                         <div class="btn btn-lg btn-primary" id="celsius"></div>
@@ -55,8 +55,11 @@
     </nav>
     <div class="container main-container">
         <div class="row row-bottom-margin-50" id="locale">
-            <div class="col-md-6">
-                <h2 class="well" id="location"></h2>
+            <div class="col-md-6 hidden-xs">
+                <h2 class="well localLoc" id="locationLoc"></h2>
+            </div>
+            <div class="col-md-6 visible-xs-block">
+                <h3 class="well localLoc" id="locationLoc"></h3>
             </div>
             <div class="col-md-3 col-md-offset-3" id="buttons">
                 <div class="active btn btn-primary" id="btn-current">Current Conditions</div>
@@ -76,7 +79,7 @@
                     </div>
                     <div class="row row-bottom-margin-50">
                         <div class="col-md-12 text-center">
-                            <h1 id="currentTemp"></h1>
+                            <h1 class="fahrenheit" id="currentTempF"></h1><h1 class="celsius" id="currentTempC"></h1>
                         </div>
                     </div>
                     <div class="row">
@@ -157,17 +160,17 @@
                 </div>
                 <div class="row row-bottom-margin-20">
                     <div class="col-md-12 text-center">
-                        <img src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/lite-rain.png">
+                        <img id="tomorrowIconUrl">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Min</h3>
-                        <h2 id="tomorrowMin"></h2>
+                        <h2 class="fahrenheit" id="tomorrowMinF"></h2><h2 class="celsius" id="tomorrowMinC"></h2>
                     </div>
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Max</h3>
-                        <h2 id="tomorrowMax"></h2>
+                        <h2 class="fahrenheit" id="tomorrowMaxF"></h2><h2 class="celsius" id="tomorrowMaxC"></h2>
                     </div>
                 </div>
             </div>
@@ -175,7 +178,7 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h4 class="forecastDate" id="tomorrowPlus1"></h4>
+                        <h4 class="forecastDate  row-bottom-margin-20" id="tomorrowPlus1"></h4>
                     </div>
                 </div>
                 <div class="row">
@@ -185,17 +188,17 @@
                 </div>
                 <div class="row row-bottom-margin-20">
                     <div class="col-md-12 text-center">
-                        <img src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/lite-rain.png">
+                        <img id="tomorrowPlus1IconUrl">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Min</h3>
-                        <h2 id="tomorrowPlus1Min"></h2>
+                        <h2 class="fahrenheit" id="tomorrowPlus1MinF"></h2><h2 class="celsius" id="tomorrowPlus1MinC"></h2>
                     </div>
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Max</h3>
-                        <h2 id="tomorrowPlus1Max"></h2>
+                        <h2 class="fahrenheit" id="tomorrowPlus1MaxF"></h2><h2 class="celsius" id="tomorrowPlus1MaxC"></h2>
                     </div>
                 </div>
             </div>
@@ -203,7 +206,7 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h4 class="forecastDate" id="tomorrowPlus2"></h4>
+                        <h4 class="forecastDate row-bottom-margin-20" id="tomorrowPlus2"></h4>
                     </div>
                 </div>
                 <div class="row">
@@ -213,17 +216,17 @@
                 </div>
                 <div class="row row-bottom-margin-20">
                     <div class="col-md-12 text-center">
-                        <img src="http://i160.photobucket.com/albums/t180/dominofoe/FCC-Weather%20App/lite-rain.png">
+                        <img id="tomorrowPlus2IconUrl">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Min</h3>
-                        <h2 id="tomorrowPlus2Min">56<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small></h2>
+                        <h2 class="fahrenheit" id="tomorrowPlus2MinF"></h2><h2 class="celsius" id="tomorrowPlus2MinC"></h2>
                     </div>
                     <div class="col-md-6 col-xs-6 text-center">
                         <h3>Max</h3>
-                        <h2 id="tomorrowPlus2Max"></h2>
+                        <h2 class="fahrenheit" id="tomorrowPlus2MaxF"></h2><h2 class="celsius" id="tomorrowPlus2MaxC"></h2>
                     </div>
                 </div>
             </div>
@@ -252,10 +255,12 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-ui.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 
-</body>
+    </body>
 </html>

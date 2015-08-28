@@ -10,11 +10,17 @@ $(document).ready(function() {
 
 
     //// Button watchers ////
-    $("#locale-button").on('click', function(e) {
+
+    /// Next feature ///
+   /* $("#locale-button").on('click', function(e) {
         e.preventDefault();
         var userInput = $("#city").val();
+        console.log(userInput);
         getWeatherFromUser(userInput);
-    });
+        $(".localLoc").fadeOut('fast', 'swing', function() {
+            $(".userLoc").fadeIn('slow');
+        })
+    });*/
 
     $("#btn-current").on('click', function(e) {
         e.preventDefault();
@@ -38,8 +44,8 @@ $(document).ready(function() {
         e.preventDefault();
         $("#celsius").removeClass("active");
         $("#fehren").addClass("active");
-        $(".celsius-setting").fadeOut('fast', 'swing', function() {
-            $(".fehren-setting").fadeIn('slow');
+        $(".celsius").fadeOut('fast', 'swing', function() {
+            $(".fahrenheit").fadeIn('slow');
         })
     });
 
@@ -47,15 +53,20 @@ $(document).ready(function() {
         e.preventDefault();
         $("#fehren").removeClass("active");
         $("#celsius").addClass("active");
-        $(".fehren-setting").fadeOut('fast', 'swing', function() {
-            $(".celsius-setting").fadeIn('slow');
-        })
+        $(".fahrenheit").fadeOut('fast', 'swing', function() {
+            $(".celsius").fadeIn('slow');
+        });
+
     });
 
 
 
 
     //// Helper methods ////
+    function convertToMetric(temp) {
+        var currentTempMetric = (Math.round(((temp - 32)*(5/9))));
+        return currentTempMetric;
+    }
 
 
     function setDates() {
@@ -256,9 +267,9 @@ $(document).ready(function() {
 
     function createLocationString(city, region, country) {
         if(country === "US" || country === "CA") {
-            $("#location").html(city + ", " + region);
+            $(".localLoc").html(city + ", " + region);
         } else {
-            $("#location").html(city + ", " + getCountryNames(country));
+            $("#locationUser").html(city + ", " + getCountryNames(country));
         }
     }
 
@@ -274,9 +285,11 @@ $(document).ready(function() {
         var conditions = (data.weather[0].description);
         var backgroundUrl = getImages("background", data.weather[0].id, sunset, sunrise);
         var conditionsIconUrl = getImages("conditions", data.weather[0].id, sunset, sunrise);
+        var tempCelsius = convertToMetric(data.main.temp);
+
 
         //// Current Conditions
-        $("#currentTemp").html(temp + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
+        $("#currentTempF").html(temp + '<small>&deg;F</small>');
         $("#windSpeed").html(windSpeed + '<small>mph</small>');
         $("#windDir").html(windDir);
         $("#pressure").html(pressure + '<small>mb</small>');
@@ -286,6 +299,7 @@ $(document).ready(function() {
         $("#conditions").html(conditions);
         $("body").css('background-image', 'url(' + backgroundUrl + ')');
         $("#conditions-icon").attr('src', conditionsIconUrl);
+        $("#currentTempC").html(tempCelsius + '<small>&deg;C</small>');
 
     }
 
@@ -296,43 +310,49 @@ $(document).ready(function() {
         createDateStrings(tomorrow, "tomorrow");
         var tomorrowDesc = data.list[1].weather[0].description;
         $("#tomorrowDesc").html(tomorrowDesc);
-        var tomorrowMin = Math.round(data.list[1].temp.min);
-        $("#tomorrowMin").html(tomorrowMin + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
-        var tomorrowMax = Math.round(data.list[1].temp.max);
-        $("#tomorrowMax").html(tomorrowMax + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
-
-
+        var tomorrowMinF = Math.round(data.list[1].temp.min);
+        $("#tomorrowMinF").html(tomorrowMinF + '<small class="fahrenheit">&deg;F</small>');
+        var tomorrowMaxF = Math.round(data.list[1].temp.max);
+        $("#tomorrowMaxF").html(tomorrowMaxF + '<small class="fahrenheit">&deg;F</small>');
+        var tomorrowIconUrl = getImages("conditions", data.list[1].weather[0].id);
+        $("#tomorrowIconUrl").attr('src', tomorrowIconUrl);
+        var tomorrowMinC = convertToMetric(data.list[1].temp.min);
+        $("#tomorrowMinC").html(tomorrowMinC + '<small class="celsius">&deg;C</small>');
+        var tomorrowMaxC = convertToMetric(data.list[1].temp.max);
+        $("#tomorrowMaxC").html(tomorrowMaxC + '<small class="celsius">&deg;C</small>');
 
         // Tomorrow plus 1
         var tomorrowPlus1 = new Date((data.list[2].dt)*1000);
         createDateStrings(tomorrowPlus1, "tomorrowPlus1");
         var tomorrowPlus1Desc = data.list[2].weather[0].description;
         $("#tomorrowPlus1Desc").html(tomorrowPlus1Desc);
-        var tomorrowPlus1Min = Math.round(data.list[2].temp.min);
-        $("#tomorrowPlus1Min").html(tomorrowPlus1Min + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
-        var tomorrowPlus1Max = Math.round(data.list[2].temp.max);
-        $("#tomorrowPlus1Max").html(tomorrowPlus1Max + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
-
+        var tomorrowPlus1MinF = Math.round(data.list[2].temp.min);
+        $("#tomorrowPlus1MinF").html(tomorrowPlus1MinF + '<small class="fahrenheit">&deg;F</small>');
+        var tomorrowPlus1MaxF = Math.round(data.list[2].temp.max);
+        $("#tomorrowPlus1MaxF").html(tomorrowPlus1MaxF + '<small class="fahrenheit">&deg;F</small>');
+        var tomorrowPlus1IconUrl = getImages("conditions", data.list[2].weather[0].id);
+        $("#tomorrowPlus1IconUrl").attr('src', tomorrowPlus1IconUrl);
+        var tomorrowPlus1MinC = convertToMetric(data.list[2].temp.min);
+        $("#tomorrowPlus1MinC").html(tomorrowPlus1MinC + '<small class="celsius">&deg;C</small>');
+        var tomorrowPlus1MaxC = convertToMetric(data.list[2].temp.max);
+        $("#tomorrowPlus1MaxC").html(tomorrowPlus1MaxC + '<small class="celsius">&deg;C</small>');
 
         //Tomorrow plus 2
         var tomorrowPlus2 = new Date((data.list[3].dt)*1000);
         createDateStrings(tomorrowPlus2, "tomorrowPlus2");
         var tomorrowPlus2Desc = data.list[3].weather[0].description;
         $("#tomorrowPlus2Desc").html(tomorrowPlus2Desc);
-        var tomorrowPlus2Min = Math.round(data.list[3].temp.min);
-        $("#tomorrowPlus2Min").html(tomorrowPlus2Min + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
-        var tomorrowPlus2Max = Math.round(data.list[3].temp.max);
-        $("#tomorrowPlus2Max").html(tomorrowPlus2Max + '<small class="celsius-setting">&deg;C</small><small class="fehren-setting">&deg;F</small>');
-
-
-
-
+        var tomorrowPlus2MinF = Math.round(data.list[3].temp.min);
+        $("#tomorrowPlus2MinF").html(tomorrowPlus2MinF + '<small class="fahrenheit">&deg;F</small>');
+        var tomorrowPlus2MaxF = Math.round(data.list[3].temp.max);
+        $("#tomorrowPlus2MaxF").html(tomorrowPlus2MaxF + '<small class="fahrenheit">&deg;F</small>');
+        var tomorrowPlus2IconUrl = getImages("conditions", data.list[3].weather[0].id);
+        $("#tomorrowPlus2IconUrl").attr('src', tomorrowPlus2IconUrl);
+        var tomorrowPlus2MinC = convertToMetric(data.list[3].temp.min);
+        $("#tomorrowPlus2MinC").html(tomorrowPlus2MinC + '<small class="celsius">&deg;C</small>');
+        var tomorrowPlus2MaxC = convertToMetric(data.list[3].temp.max);
+        $("#tomorrowPlus2MaxC").html(tomorrowPlus2MaxC + '<small class="celsius">&deg;C</small>');
     }
-
-
-
-
-
 
 
 
@@ -350,6 +370,8 @@ $(document).ready(function() {
                 APPID: apiKey
             },
             success: function (response) {
+                console.log(response);
+                createWeatherDataStrings(response);
 
             }
         });

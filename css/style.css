@@ -38,6 +38,14 @@ small {
     color: #000 !important;
 }
 
+.celsius {
+    display: none;
+}
+
+.userLoc {
+    display: none;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
