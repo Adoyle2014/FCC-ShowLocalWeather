@@ -19,6 +19,7 @@
 5. There are two sets of background images.  One for day and one for night.  They change based on sunrise and sunset.
 6. User has ability to switch between fahrenheit or celsius
 7. User has ability to see forecast weather for the next three days
+8. App is completely responsive and looks great on any device
 
 ----
 

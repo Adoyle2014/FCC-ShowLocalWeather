@@ -33,8 +33,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77548003" vertical-offset="0" max-vertical-offset="677">
-              <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.65140325" vertical-offset="0" max-vertical-offset="693">
+              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -313,7 +313,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440720306362</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="updated README">
+      <created>1440720791165</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1440720791165</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -356,7 +362,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="updated README" />
     <MESSAGE value="test user location and api call" />
     <MESSAGE value="API call response correct" />
     <MESSAGE value="Started to add HTML and content" />
@@ -375,7 +380,8 @@
     <MESSAGE value="changed min/max to wind speed/dir and added dynamic data" />
     <MESSAGE value="completed image changing and icon changing in current, finished forecast except for icon changing" />
     <MESSAGE value="complete.  Leaving user input location for another time" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete.  Leaving user input location for another time" />
+    <MESSAGE value="updated README" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -443,8 +449,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77548003" vertical-offset="0" max-vertical-offset="677">
-          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.65140325" vertical-offset="0" max-vertical-offset="693">
+          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
           <folding />
         </state>
       </provider>
